@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>中国书法知识图谱</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="seal">书</span><div><h1>中国书法知识图谱</h1><p id="scale">正在读取图谱规模</p></div></div>
+  <nav id="tabs" role="tablist">
+    <button role="tab" data-tab="ask" class="on">问答</button>
+    <button role="tab" data-tab="search">检索</button>
+    <button role="tab" data-tab="network">师承网络</button>
+    <button role="tab" data-tab="analysis">分析</button>
+    <button role="tab" data-tab="sparql">SPARQL</button>
+  </nav>
+</header>
+
+<main>
+  <section id="ask" class="panel on">
+    <form id="askForm" class="bar"><input id="askInput" placeholder="问一个关于书法家、作品或书体的问题" autocomplete="off" aria-label="问题"><button>提问</button></form>
+    <div id="examples" class="chips"></div>
+    <div id="askResult"></div>
+  </section>
+
+  <section id="search" class="panel">
+    <form id="searchForm" class="bar">
+      <input id="searchInput" placeholder="输入人名、字号、作品名或关键词，多个词用空格分开" autocomplete="off" aria-label="检索词">
+      <select id="searchType" aria-label="实体类型"><option value="">全部类型</option><option value="Calligrapher">书法家</option><option value="Person">其他人物</option><option value="CalligraphyWork">作品</option><option value="ScriptStyle">书体</option><option value="Dynasty">朝代</option></select>
+      <button>检索</button>
+    </form>
+    <div id="searchResult"></div>
+  </section>
+
+  <section id="network" class="panel">
+    <form id="netForm" class="bar">
+      <input id="netInput" placeholder="输入人物，查看其师承网络（留空显示连接最多的人物）" autocomplete="off" aria-label="人物">
+      <select id="netDepth" aria-label="层数"><option value="1">1 层</option><option value="2" selected>2 层</option><option value="3">3 层</option></select>
+      <button>查看</button>
+    </form>
+    <div class="domains" id="domains"></div>
+    <p class="hint" id="netHint"></p>
+    <div id="netWrap"><svg id="netSvg" role="img" aria-label="师承关系网络图"></svg></div>
+    <p class="hint">箭头从学生指向老师。实线为师从，虚线为取法。点击节点查看详情，拖动节点可调整位置。</p>
+  </section>
+
+  <section id="analysis" class="panel"><div id="analysisBody"></div></section>
+
+  <section id="sparql" class="panel">
+    <p class="hint">只支持 SELECT 和 ASK。前缀 cns、shufa、rdf 已预设。</p>
+    <textarea id="sparqlInput" rows="9" spellcheck="false" aria-label="SPARQL 查询"></textarea>
+    <div class="row"><button id="sparqlRun">运行</button><span id="sparqlInfo" class="hint"></span></div>
+    <div id="sparqlResult"></div>
+  </section>
+</main>
+
+<aside id="drawer" aria-label="实体详情"><button id="drawerClose" aria-label="关闭">×</button><div id="drawerBody"></div></aside>
+<div id="tip" role="tooltip"></div>
+<footer>数据来自中文维基百科（CC BY-SA 4.0）和 Wikidata（CC0）。抽取结果未经人工全面核对，引用前请查看证据句和来源。</footer>
+<script src="app.js"></script>
+</body>
+</html>

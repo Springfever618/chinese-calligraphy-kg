@@ -1,0 +1,66 @@
+{
+ "实体总数": 1997,
+ "实体类型": {
+  "Calligrapher": 1431,
+  "Dynasty": 19,
+  "Person": 370,
+  "CalligraphyWork": 162,
+  "ScriptStyle": 15
+ },
+ "关系总数": 2467,
+ "关系类型": {
+  "inDynasty": 1291,
+  "children": 38,
+  "spouse": 4,
+  "studiedUnder": 542,
+  "parent": 37,
+  "sibling": 50,
+  "emulated": 58,
+  "calligrapher": 142,
+  "writtenInScript": 30,
+  "heldBy": 15,
+  "compiler": 4,
+  "workForm": 28,
+  "skilledInScript": 228
+ },
+ "按方法": {
+  "维基分类映射": 1291,
+  "Wikidata": 230,
+  "大模型判读": 719,
+  "规则": 227
+ },
+ "师承领域": {
+  "未标注": 101,
+  "学术": 138,
+  "书法": 165,
+  "绘画": 102,
+  "书画": 43,
+  "篆刻": 7,
+  "其他": 44
+ },
+ "补采名家": {
+  "Person": 15,
+  "Calligrapher": 56
+ },
+ "师承陈述节点": 600,
+ "生卒年与Wikidata不一致": 110,
+ "生卒年不合理未采用": 1,
+ "时间校验丢弃": 0,
+ "范围外条目": 8,
+ "复用的cnSchema属性": [
+  "name",
+  "alternateName",
+  "description",
+  "url",
+  "sameAs",
+  "birthDate",
+  "deathDate",
+  "birthPlace",
+  "gender",
+  "parent",
+  "spouse",
+  "children",
+  "sibling"
+ ],
+ "父类不在cnSchema": []
+}

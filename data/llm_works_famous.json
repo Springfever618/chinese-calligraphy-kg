@@ -1,0 +1,3 @@
+{"_说明": "补采名家的作品判读，由 claude-opus-5-5 逐句完成，未经人工复核。编号对应 candidates_famous.json 的 work。",
+ "script_creators": {"瘦金体": "宋徽宗"},
+ "accepted_candidate_ids": [0,4,5,14,15,16,19,20,31,32,33,34,35,36,37,41,45,50]}

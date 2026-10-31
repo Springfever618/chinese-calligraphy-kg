@@ -1,0 +1,127 @@
+{
+ "@context": {
+  "shufa": "urn:cn-calligraphy-kg:schema/",
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+  "domainName": "shufa:domainName",
+  "rangeName": "shufa:rangeName"
+ },
+ "@graph": [
+  {
+   "@id": "shufa:Calligrapher",
+   "@type": "rdfs:Class",
+   "rdfs:label": "书法家",
+   "rdfs:subClassOf": {
+    "@id": "http://cnschema.org/Person"
+   },
+   "rdfs:comment": "以书法创作、研究或传授著称的人物"
+  },
+  {
+   "@id": "shufa:CalligraphyWork",
+   "@type": "rdfs:Class",
+   "rdfs:label": "书法作品",
+   "rdfs:subClassOf": {
+    "@id": "http://cnschema.org/CreativeWork"
+   },
+   "rdfs:comment": "碑刻、法帖、墨迹、摩崖、铭文等书法作品"
+  },
+  {
+   "@id": "shufa:ScriptStyle",
+   "@type": "rdfs:Class",
+   "rdfs:label": "书体",
+   "rdfs:subClassOf": {
+    "@id": "http://cnschema.org/Thing"
+   },
+   "rdfs:comment": "楷书、行书、草书、隶书、篆书等书写体式"
+  },
+  {
+   "@id": "shufa:Dynasty",
+   "@type": "rdfs:Class",
+   "rdfs:label": "朝代或时期",
+   "rdfs:subClassOf": {
+    "@id": "http://cnschema.org/Thing"
+   },
+   "rdfs:comment": "人物所属的朝代或历史时期"
+  },
+  {
+   "@id": "shufa:studiedUnder",
+   "@type": "rdf:Property",
+   "rdfs:label": "师从",
+   "rdfs:comment": "确有授受关系的老师",
+   "domainName": "Calligrapher",
+   "rangeName": "Person"
+  },
+  {
+   "@id": "shufa:emulated",
+   "@type": "rdf:Property",
+   "rdfs:label": "取法",
+   "rdfs:comment": "学习、效法的前代书家，不要求亲自受教",
+   "domainName": "Calligrapher",
+   "rangeName": "Person"
+  },
+  {
+   "@id": "shufa:relationDomain",
+   "@type": "rdf:Property",
+   "rdfs:label": "师承领域",
+   "rdfs:comment": "书法、篆刻、绘画、书画、学术或其他",
+   "domainName": "Statement",
+   "rangeName": "Text"
+  },
+  {
+   "@id": "shufa:skilledInScript",
+   "@type": "rdf:Property",
+   "rdfs:label": "擅长书体",
+   "rdfs:comment": "人物擅长的书体",
+   "domainName": "Calligrapher",
+   "rangeName": "ScriptStyle"
+  },
+  {
+   "@id": "shufa:writtenInScript",
+   "@type": "rdf:Property",
+   "rdfs:label": "作品书体",
+   "rdfs:comment": "作品采用的书体",
+   "domainName": "CalligraphyWork",
+   "rangeName": "ScriptStyle"
+  },
+  {
+   "@id": "shufa:inDynasty",
+   "@type": "rdf:Property",
+   "rdfs:label": "所属朝代",
+   "rdfs:comment": "人物所属朝代或时期",
+   "domainName": "Person",
+   "rangeName": "Dynasty"
+  },
+  {
+   "@id": "shufa:calligrapher",
+   "@type": "rdf:Property",
+   "rdfs:label": "书写者",
+   "rdfs:comment": "作品的书写者",
+   "domainName": "CalligraphyWork",
+   "rangeName": "Person"
+  },
+  {
+   "@id": "shufa:compiler",
+   "@type": "rdf:Property",
+   "rdfs:label": "编者",
+   "rdfs:comment": "丛帖的编选者",
+   "domainName": "CalligraphyWork",
+   "rangeName": "Person"
+  },
+  {
+   "@id": "shufa:workForm",
+   "@type": "rdf:Property",
+   "rdfs:label": "作品形制",
+   "rdfs:comment": "碑刻、摩崖、丛帖、青铜器铭文等",
+   "domainName": "CalligraphyWork",
+   "rangeName": "Text"
+  },
+  {
+   "@id": "shufa:heldBy",
+   "@type": "rdf:Property",
+   "rdfs:label": "收藏地",
+   "rdfs:comment": "作品或原物的现藏地",
+   "domainName": "CalligraphyWork",
+   "rangeName": "Text"
+  }
+ ]
+}
