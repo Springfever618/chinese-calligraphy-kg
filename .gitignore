@@ -4,3 +4,5 @@ __pycache__/
 .DS_Store
 备份/
 data/raw/cnschema/
+
+申请材料/

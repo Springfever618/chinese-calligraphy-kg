@@ -47,7 +47,7 @@ python3 -m venv .venv
 | `output/calligraphy-kg.jsonld` | 图谱数据（JSON-LD） |
 | `output/statements.tsv` | 每条关系的方法、证据句和来源 |
 | `schema/calligraphy-schema.jsonld` | cnSchema 扩展定义 |
-| `evaluation/待人工标注.csv` | 抽样 201 条，等人工判断是否正确 |
+| `evaluation/待人工标注.csv` | 抽样 201 条，留作人工评估用，本版本未标注 |
 | `data/llm_master.txt`、`data/llm_works.json` | 大模型逐句判读结果 |
 | `scripts/` | 采集、清洗和构建脚本 |
 | `app/` | 应用：`kg.py` 图谱访问和分析，`qa.py` 问答，`server.py` 服务，`static/` 页面 |
@@ -85,7 +85,7 @@ python3 -I scripts/build.py
 
 ## 已知限制
 
-- 准确率尚未评估。填完 `evaluation/待人工标注.csv` 后才能报告精确率。
+- 本版本未做人工抽样评估，准确率未知。`evaluation/待人工标注.csv` 留有 201 条抽样，需要时可自行标注。
 - 数据只来自中文维基和 Wikidata，没有覆盖百度百科和专业书法文献，召回率有限。
 - 师承关系包含学术、绘画等领域，使用时请按 `relationDomain` 筛选。
 - 新增的 Person 节点没有消歧，文中提到的同名者会归到正文最长的那位。
